@@ -7,9 +7,9 @@ public class Equipe_Recherche {
 	private int IdLab;
 	
 	
-	public Equipe_Recherche(int Idlab, String nom, String sujet) {
+	public Equipe_Recherche( String nom, String sujet) {
 		super();
-		IdLab = Idlab;
+		
 		Nom = nom;
 		Sujet = sujet;
 	}

@@ -20,7 +20,8 @@ import dao.*;
 /**
  * Servlet implementation class ServletController
  */
-@WebServlet (name="cs",urlPatterns= {"/test","/controleur","/GestEtu","/AddEtu","/saveEtud","/DelEtu","/ModfEtu","/modEtud","/GestProf","/AddProf","/SaveProf","/modProf","/ModfProf"})
+@WebServlet (name="cs",urlPatterns= {"/test","/controleur","/GestEtu","/AddEtu","/saveEtud","/DelEtu","/ModfEtu",
+		"/modEtud","/GestProf","/AddProf","/SaveProf","/modProf","/ModfProf"})
 public class ServletController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -33,7 +34,7 @@ public class ServletController extends HttpServlet {
 	private LoginDAO loginDao;
 	private EtudiantDaoImpl etudiantDao = new EtudiantDaoImpl();
 	private ProfesseurDaoImpl profDao=new ProfesseurDaoImpl();
-
+    private EQPR_DAO eq= new EQPR_DAO();
     public void init() {
         loginDao = new LoginDAO();
         
@@ -178,10 +179,38 @@ public class ServletController extends HttpServlet {
 				List<Professeur> listeProfesseurs = profDao.getAllProf();
 				request.setAttribute("listeEtudiant", listeProfesseurs);
 
-	        	response.sendRedirect("/GestProf");
+	        	response.sendRedirect("GestProf");
 	       
 		 		 }
-		
+	        else if (request.getServletPath().equals("/DelProf")) {
+	        	int id=Integer.parseInt(request.getParameter("id"));
+	        	System.out.println("diliteee  "+id);
+	        	profDao.Stop(id);
+	        	List<Professeur> listeProfesseurs = profDao.getAllProf();
+				request.setAttribute("listeProf", listeProfesseurs);
+
+	        	response.sendRedirect("GestProf");
 	}
-	}
+	        else if(request.getServletPath().equals("/GestEqp")) {
+                List<Professeur> p = profDao.getAllProf();
+                request.setAttribute("professeurs", p);
+                System.out.println(p);
+                  this.getServletContext().getRequestDispatcher("/EqpRchrch.jsp").forward(request, response);
+            }else if(request.getServletPath().equals("/addEqr")) {
+                String nom = request.getParameter("nom");
+                String sujet = request.getParameter("sujet");
+               String[] prof = request.getParameterValues("professeur");
+               for (int i = 0; i < prof.length; i++) {
+                  System.out.println(prof[i]);
+              }
+               int[]idprof = {0,0,0,0};
+               for (int i = 0; i < prof.length; i++) {
+                   idprof[i]=Integer.parseInt(prof[i]);
+                  System.out.println(idprof[i]);
+              }
+               Equipe_Recherche er = new Equipe_Recherche(nom, sujet);
+               eq.addEqp(er, idprof);
+
+            }
+	}}
 	
