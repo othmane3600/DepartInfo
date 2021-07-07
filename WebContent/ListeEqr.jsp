@@ -53,7 +53,7 @@
       </div>
 
       <!--logo start-->
-      <a href="index.html" class="logo">Welcome <span class="lite">Admin</span></a>
+      <a href="index.jsp" class="logo">Welcome <span class="lite">Admin</span></a>
       <!--logo end-->
 
       <div class="nav search-row" id="top_menu">
@@ -135,7 +135,7 @@
             <ul class="sub">
               <li><a class="" href="<c:url value="/GestEtu"/>">Etudiants</a></li>
               <li><a class="" href="<c:url value="/GestProf"/>"> Professeurs</a></li>
-              <li><a class="" href="<c:url value="/listeEqr"/>">Equipe de Recherches </a></li>
+              <li><a class="" href="<c:url value="/GestEqp"/>">Equipe de Recherches </a></li>
               
               <li><a class="" href="<c:url value="/GestForm"/>">Formations</a></li>
               <li><a class="" href="<c:url value="/GestJourn"/>">Journalistes</a></li>
@@ -216,73 +216,57 @@
             </ol>
           </div>
         </div>
-        <!-- Form validations -->
-        
+
         <div class="row">
           <div class="col-lg-12">
             <section class="panel">
               <header class="panel-heading">
-                Modifier Professeur
+               <table >
+               <th>  Table des Equipe de Recherche</th>
+               <th class="col-md-5"></th>
+               <th class="col-md-5"></th>
+               
+               <th> <a class="btn btn-primary" href="<c:url value="/GestEqp"/>"><i class="icon_plus_alt2"></i></a></th>
+               </table>
               </header>
-              <div class="panel-body">
-                <div class="form">
-                  <form class="form-validate form-horizontal "  method="post" action="modProf">
-                   	<div class="form-group ">
-                      <label for="fullname" class="control-label col-lg-2">ID <span class="required">*</span></label>
-                      
-                      <div class="col-lg-10">
-                        <input class=" form-control" id="fullname" name="id" type="text" value="${pr.getIdProfeseur()}" readonly="readonly"/>
+
+              <table class="table table-striped table-advance table-hover">
+                <tbody>
+                  <tr>
+                    <th><i class="icon_profile"></i> Id Equipe</th>
+                    <th><i class="icon_calendar"></i> Nom</th>
+                    <th><i class="icon_mail_alt"></i> Sujet</th>
+                    <th><i class="icon_pin_alt"></i> Nom Professeurs</th>
+                    <th><i class="icon_cogs"></i> Action</th>
+                  </tr>
+                  <tr>
+                  
+                   <c:forEach items="${equipes}" var="e">
+         <tr>
+                    <td><c:out value="${e.getIdEquipeRech()}"/></td>
+                    <td><c:out value="${e.getNom()}"/></td>
+                    <td><c:out value="${e.getSujet()}"/></td>
+                    <td><c:out value="${e.getNomp()}"/></td>
+                    <td>
+                      <div class="btn-group">
+                        
+                        <a class="btn btn-success" href="ModfProf?id=<c:out value ='${pr.getIdProfeseur()}'/>"><i class="icon_check_alt2"></i></a>
+                        <a class="btn btn-danger" href="DelProf?id=<c:out value='${pr.getIdProfeseur()}'/>"><i class="icon_close_alt2"></i></a>
                       </div>
-                    <div class="form-group ">
-                      <label for="fullname" class="control-label col-lg-2">Full name <span class="required">*</span></label>
-                      <div class="col-lg-10">
-                        <input class=" form-control" id="fullname" name="fullname" type="text" value="${pr.getNom()} ${pr.getPrenom()}"/>
-                      </div>
-                    </div>
-                    <div class="form-group ">
-                      <label for="address" class="control-label col-lg-2">Phone <span class="required">*</span></label>
-                      <div class="col-lg-10">
-                        <input class=" form-control" id="phone" name="phone" type="text" value="${pr.getTel()}" />
-                      </div>
-                    </div>
-                    <div class="form-group ">
-                      <label for="username" class="control-label col-lg-2">Email <span class="required">*</span></label>
-                      <div class="col-lg-10">
-                        <input class="form-control " id="email" name="email" type="email" value="${pr.getEmail()}"/>
-                      </div>
-                    </div>
-                    <div class="form-group ">
-                      <label for="password" class="control-label col-lg-2">Password <span class="required">*</span></label>
-                      <div class="col-lg-10">
-                        <input class="form-control " id="password" name="password" type="password" value="${pr.getMdp()}" />
-                      </div>
-                    </div>
-                    <div class="form-group ">
-                      <label for="confirm_password" class="control-label col-lg-2">Confirm Password <span class="required">*</span></label>
-                      <div class="col-lg-10">
-                        <input class="form-control " id="confirm_password" name="confirm_password" type="password" value="${pr.getMdp()}"  />
-                      </div>
-                    </div>
-                    <!-- <div class="form-group ">
-                      <label for="email" class="control-label col-lg-2">Email <span class="required">*</span></label>
-                      <div class="col-lg-10">
-                        <input class="form-control " id="email" name="email" type="email" />
-                      </div>
-                    </div> -->
+                    </td>
+
+                  </c:forEach>
+                   
+                   
                     
-                    <div class="form-group">
-                      <div class="col-lg-offset-2 col-lg-10">
-                        <button class="btn btn-primary" type="submit">Save</button>
-                       
-                      </div>
-                    </div>
-                  </form>
-                </div>
-              </div>
+                  </tr>
+                  
+                  </tr>
+                </tbody>
+              </table>
             </section>
           </div>
         </div>
-        
         <!-- page end-->
       </section>
     </section>
@@ -319,4 +303,3 @@
 </body>
 
 </html>
-    

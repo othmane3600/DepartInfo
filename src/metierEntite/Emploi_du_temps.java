@@ -1,27 +1,46 @@
 package metierEntite;
 
+import java.io.InputStream;
+
 import com.mysql.jdbc.Blob;
 
 public class Emploi_du_temps {
 	private int IdEmploi;
-	private Blob Emploi;
+	private InputStream Emploi;
+	private String nom;
+
 	
-	
+
+	public Emploi_du_temps(InputStream emploi, String nom) {
+		super();
+		Emploi = emploi;
+		this.nom = nom;
+	}
+
 	public int getIdEmploi() {
 		return IdEmploi;
 	}
+
 	public void setIdEmploi(int idEmploi) {
 		IdEmploi = idEmploi;
 	}
-	public Blob getEmploi() {
+
+	public InputStream getEmploi() {
 		return Emploi;
 	}
-	public void setEmploi(Blob emploi) {
+
+	public void setEmploi(InputStream emploi) {
 		Emploi = emploi;
 	}
-	public Emploi_du_temps(int idEmploi, Blob emploi) {
-		super();
-		IdEmploi = idEmploi;
-		Emploi = emploi;
+
+	public String getNom() {
+		return nom;
 	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	
+
 }

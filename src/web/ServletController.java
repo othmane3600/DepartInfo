@@ -1,30 +1,45 @@
 package web;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.servlet.http.Part;
 
-import metierEntite.*;
+import com.mysql.jdbc.Blob;
 
-import metier.SingletonConnection;
-import dao.*;
+import dao.DaoActu;
+import dao.EQPR_DAO;
+import dao.Emploi_du_TempsDAO;
+import dao.Emploi_du_tempsDaoImpl;
+import dao.EtudiantDaoImpl;
+import dao.JournalistImpl;
+import dao.LoginDAO;
+import dao.ProfesseurDao;
+import dao.ProfesseurDaoImpl;
+import metierEntite.Emploi_du_temps;
+import metierEntite.Equipe_Recherche;
+import metierEntite.Etudiant;
+import metierEntite.Journaliste;
+import metierEntite.Professeur;
+import metierEntite.User;
 
 
 /**
  * Servlet implementation class ServletController
  */
 @WebServlet (name="cs",urlPatterns= {"/test","/controleur","/GestEtu","/AddEtu","/saveEtud","/DelEtu","/ModfEtu",
-		"/modEtud","/GestProf","/AddProf","/SaveProf","/modProf","/ModfProf"})
+		"/modEtud","/GestProf","/AddProf","/SaveProf","/modProf","/listeEqr"
+		,"/ModfProf","/GestEqp","/addEqr","/Slct1","/Slct2","/Slct3","/listerJournaliste","/AddJournalistepost","/AddJournalisteget"})
 public class ServletController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+    
    DaoActu Actu;
     public ServletController() {
         super();
@@ -35,6 +50,7 @@ public class ServletController extends HttpServlet {
 	private EtudiantDaoImpl etudiantDao = new EtudiantDaoImpl();
 	private ProfesseurDaoImpl profDao=new ProfesseurDaoImpl();
     private EQPR_DAO eq= new EQPR_DAO();
+    private JournalistImpl journalisteDao  ;
     public void init() {
         loginDao = new LoginDAO();
         
@@ -68,6 +84,38 @@ public class ServletController extends HttpServlet {
 				
 			 request.getRequestDispatcher("/ListeProf.jsp").forward(request,response);
 		 }
+		 if(request.getServletPath().equals("/Slct1")) {
+				System.out.println(request.getServletPath());
+			 List<Etudiant> listeEtudiant = etudiantDao.getEtudiantActive();
+				listeEtudiant.stream().forEach(System.out::println);
+				request.setAttribute("listeEtudiant", listeEtudiant);
+				request.getRequestDispatcher("/formulaire.jsp").forward(request, response);
+		}
+		 if(request.getServletPath().equals("/Slct2")) {
+				List<Etudiant> listeEtudiant = etudiantDao.getEtudiantNotActive();
+				
+				System.out.println("Ziad zin" + listeEtudiant.size());
+				request.setAttribute("listeEtudiant", listeEtudiant);
+				request.getRequestDispatcher("/formulaire.jsp").forward(request, response);
+		}
+		 if(request.getServletPath().equals("/Slct3")) {
+				List<Etudiant> listeEtudiant = etudiantDao.getAllEtudiant();
+				listeEtudiant.stream().forEach(System.out::println);
+				request.setAttribute("listeEtudiant", listeEtudiant);
+				request.getRequestDispatcher("/formulaire.jsp").forward(request, response);
+		}
+		 
+		if(request.getServletPath().equals("/listerJournaliste")) {
+				List<Journaliste> listeJournaliste = journalisteDao.listerJournalistes();
+				request.setAttribute("listesJournaliste", listeJournaliste);
+				request.getRequestDispatcher("/listeJournalistes.jsp").forward(request, response);
+		}
+		
+		if(request.getServletPath().equals("/AddJournalisteget")) {
+			request.getRequestDispatcher("/ajouterJournaliste.jsp").forward(request, response);
+		}
+		
+
 		 
 		 doPost(request, response);
 	 }
@@ -212,5 +260,49 @@ public class ServletController extends HttpServlet {
                eq.addEqp(er, idprof);
 
             }
+            else if(request.getServletPath().equals("/listeEqr")){
+                List<Equipe_Recherche> er = eq.getAllEqpr();
+                request.setAttribute("equipes", er);
+              this.getServletContext().getRequestDispatcher("/ListeEqr.jsp").forward(request, response);
+
+            }else if(request.getServletPath().equals("/AddJournalistepost")) {
+            	 String Nom = request.getParameter("nom");
+            	 String Prenom = request.getParameter("prenom");
+            	 String Email = request.getParameter("email");
+            	 String Mdp = request.getParameter("mdp");
+            	Journaliste journaliste = new Journaliste();
+            	journaliste.setEmail(Email);
+            	journaliste.setNom(Nom);
+            	journaliste.setPrenom(Prenom);
+            	journaliste.setMdp(Mdp);
+            	journalisteDao.ajouterJournaliste(journaliste);
+            	List<Journaliste> listeJournaliste = journalisteDao.listerJournalistes();
+				request.setAttribute("listesJournaliste", listeJournaliste);
+				request.getRequestDispatcher("/listeJournalistes.jsp").forward(request, response);
+            	
+            }
+	        
+			if(request.getServletPath().equals("/AddEmploipost")) {
+				int idProfesseur = Integer.parseInt(request.getParameter("idProfesseur"));
+				String nomEmploi = request.getParameter("nomEmploi");
+				Emploi_du_TempsDAO emploDao = new  Emploi_du_tempsDaoImpl();
+				ProfesseurDao professeurDao = new ProfesseurDaoImpl();
+				
+				
+				 Part filePart = request.getPart("emploi");
+		            InputStream emploiFile = null;
+		            if (filePart != null) {
+		            	emploiFile = filePart.getInputStream();
+		            }
+		            
+		            
+				Emploi_du_temps emploi = new Emploi_du_temps(emploiFile,nomEmploi);
+				emploDao.Add(emploi);
+				
+				Emploi_du_temps emploiAvecId = emploDao.getEmploiByName(emploi.getNom());
+				
+				professeurDao.updateProfesseur(idProfesseur, emploiAvecId.getIdEmploi());
+				request.getRequestDispatcher("/ajouterEmploi.jsp").forward(request, response);
+			}
 	}}
 	

@@ -202,26 +202,12 @@
 						<section class="panel">
 							<header class="panel-heading">
 								<table>
-									<th>Table d'etudiant</th>
-									<th class="col-md-5"></th>
-									<th class="col-md-5">
-										<div class="btn-row">
-											<a class="btn btn-primary " href="<c:url value="/Slct1"/>">
-												Active </a> <a href="<c:url value="/Slct2"/>"
-												class="btn btn-primary "> Null</a> <a
-												class="btn btn-primary "
-												href="<c:url value="/Slct3"/>">
-												All</a>
-
-
-										</div>
-									</th>
+									<th>Table de Journaliste</th>
 
 									<th><a class="btn btn-primary"
-										href="<c:url value="/AddEtu"/>"><i class="icon_plus_alt2"></i></a></th>
+										href="<c:url value="/AddJournaliste"/>"><i class="icon_plus_alt2"></i></a></th>
 								</table>
-							</header>
-
+							</header>	
 							<table class="table table-striped table-advance table-hover">
 								<tbody>
 									<tr>
@@ -234,12 +220,11 @@
 									</tr>
 									<tr>
 
-										<c:forEach items="${listeEtudiant}" var="Et">
+										<c:forEach items="${listesJournaliste}" var="Et">
 											<tr>
 												<td><c:out value="${Et.getNom()}" /></td>
 												<td><c:out value="${Et.getPrenom()}" /></td>
 												<td><c:out value="${Et.getEmail()}" /></td>
-												<td><c:out value="${Et.getMassar()}" /></td>
 												<td><c:out value="${Et.getMdp()}" /></td>
 												<td>
 													<div class="btn-group">

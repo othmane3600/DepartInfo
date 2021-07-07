@@ -39,7 +39,33 @@ public class ProfesseurDaoImpl implements ProfesseurDao {
 		}
 		return Liste;
 	}
-
+public List<Professeur> getProfBack() {
+		
+		Connection con= SingletonConnection.getConnection();
+		PreparedStatement ps;
+		List<Professeur>Liste=new ArrayList<>();
+		
+		try {
+			ps=con.prepareStatement("SELECT * FROM professeur WHERE State = 0");
+			
+			ResultSet rs=ps.executeQuery();
+			
+			while(rs.next()) {
+				Professeur p=new Professeur();
+				p.setNom(rs.getString("Nom"));
+				p.setPrenom(rs.getString("Prenom"));
+				p.setEmail(rs.getString("Email"));
+				p.setMdp(rs.getString("Mdp"));
+				p.setTel(rs.getInt("Tel"));
+				
+				Liste.add(p);
+			}
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+		return Liste;
+	}
 	public List<Professeur> getProfParMC(String mc) {
 		
 		Connection con= SingletonConnection.getConnection();
@@ -205,6 +231,11 @@ public class ProfesseurDaoImpl implements ProfesseurDao {
 	    	} catch (SQLException e) {
 	    	e.printStackTrace();
 	    	}
+	}
+	@Override
+	public void updateProfesseur(int idProfesseur, int idEmploi) {
+		// TODO Auto-generated method stub
+		
 	}
 
 	

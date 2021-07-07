@@ -135,7 +135,7 @@
             <ul class="sub">
               <li><a class="" href="<c:url value="/GestEtu"/>">Etudiants</a></li>
               <li><a class="" href="<c:url value="/GestProf"/>"> Professeurs</a></li>
-              <li><a class="" href="<c:url value="/GestEqp"/>">Equipe de Recherches </a></li>
+              <li><a class="" href="<c:url value="/listeEqr"/>">Equipe de Recherches </a></li>
               
               <li><a class="" href="<c:url value="/GestForm"/>">Formations</a></li>
               <li><a class="" href="<c:url value="/GestJourn"/>">Journalistes</a></li>

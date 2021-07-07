@@ -3,6 +3,8 @@ package dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 import metier.SingletonConnection;
 import metierEntite.Equipe_Recherche;
@@ -30,7 +32,23 @@ public class EQPR_DAO {
             e.printStackTrace();
         }
     }
-
+    public List<Equipe_Recherche> getAllEqpr(){
+        List<Equipe_Recherche> liste = new  ArrayList<Equipe_Recherche>();
+        Connection con = SingletonConnection.getConnection();
+        PreparedStatement ps;
+        try {
+            ps=con.prepareStatement("select er.* , p.Nom from professeur p , equipe_recherche er ,grprof gp where er.IdEqpRech=gp.IdEqpRech and gp.IdProf=p.IdProf  ");
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()) {
+                Equipe_Recherche er = new Equipe_Recherche(rs.getInt("IdEqpRech"), rs.getString("Nom"), rs.getString("Sujet"), 0, rs.getString("p.Nom"));
+                liste.add(er);
+            }
+        } catch (Exception e) {
+            // TODO: handle exception
+            e.printStackTrace();
+        }
+        return liste;
+    }
     public int getEqpr(String nom , String sujet) {
         Connection conn= SingletonConnection.getConnection();
         PreparedStatement ps;

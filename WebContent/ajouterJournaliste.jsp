@@ -222,45 +222,39 @@
           <div class="col-lg-12">
             <section class="panel">
               <header class="panel-heading">
-                Modifier Professeur
+                Advanced Form validations
               </header>
               <div class="panel-body">
                 <div class="form">
-                  <form class="form-validate form-horizontal "  method="post" action="modProf">
-                   	<div class="form-group ">
-                      <label for="fullname" class="control-label col-lg-2">ID <span class="required">*</span></label>
-                      
-                      <div class="col-lg-10">
-                        <input class=" form-control" id="fullname" name="id" type="text" value="${pr.getIdProfeseur()}" readonly="readonly"/>
-                      </div>
+                  <form class="form-validate form-horizontal "  method="post" action="AddJournalisteget">
                     <div class="form-group ">
-                      <label for="fullname" class="control-label col-lg-2">Full name <span class="required">*</span></label>
+                      <label for="fullname" class="control-label col-lg-2">Nom <span class="required">*</span></label>
                       <div class="col-lg-10">
-                        <input class=" form-control" id="fullname" name="fullname" type="text" value="${pr.getNom()} ${pr.getPrenom()}"/>
+                        <input class=" form-control" id="fullname" name="nom" type="text" placeholder="firstname lastname"/>
                       </div>
                     </div>
                     <div class="form-group ">
-                      <label for="address" class="control-label col-lg-2">Phone <span class="required">*</span></label>
+                      <label for="fullname" class="control-label col-lg-2">Prenom <span class="required">*</span></label>
                       <div class="col-lg-10">
-                        <input class=" form-control" id="phone" name="phone" type="text" value="${pr.getTel()}" />
+                        <input class=" form-control" id="fullname" name="prenom" type="text" placeholder="firstname lastname"/>
                       </div>
                     </div>
                     <div class="form-group ">
                       <label for="username" class="control-label col-lg-2">Email <span class="required">*</span></label>
                       <div class="col-lg-10">
-                        <input class="form-control " id="email" name="email" type="email" value="${pr.getEmail()}"/>
+                        <input class="form-control " id="email" name="email" type="email" />
                       </div>
                     </div>
                     <div class="form-group ">
                       <label for="password" class="control-label col-lg-2">Password <span class="required">*</span></label>
                       <div class="col-lg-10">
-                        <input class="form-control " id="password" name="password" type="password" value="${pr.getMdp()}" />
+                        <input class="form-control " id="password" name="password" type="password" />
                       </div>
                     </div>
                     <div class="form-group ">
                       <label for="confirm_password" class="control-label col-lg-2">Confirm Password <span class="required">*</span></label>
                       <div class="col-lg-10">
-                        <input class="form-control " id="confirm_password" name="confirm_password" type="password" value="${pr.getMdp()}"  />
+                        <input class="form-control " id="confirm_password" name="confirm_password" type="password" />
                       </div>
                     </div>
                     <!-- <div class="form-group ">

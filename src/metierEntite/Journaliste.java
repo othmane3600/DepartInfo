@@ -45,4 +45,8 @@ public class Journaliste {
 		Mdp = mdp;
 	}
 	
+	public Journaliste() {
+		
+	}
+	
 }

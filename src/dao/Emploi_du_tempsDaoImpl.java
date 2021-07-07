@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import metier.SingletonConnection;
 import metierEntite.Emploi_du_temps;
 
-public class Emploi_du_tempsDaoImpl {
+public class Emploi_du_tempsDaoImpl implements Emploi_du_TempsDAO{
 	
 public Emploi_du_temps Add(Emploi_du_temps p) {
 		
@@ -66,6 +66,16 @@ public void Delete(int IdEmploi) {
     }
     
 
+}
+@Override
+public void Delete(Emploi_du_temps a) {
+	// TODO Auto-generated method stub
+	
+}
+@Override
+public Emploi_du_temps getEmploiByName(String name) {
+	// TODO Auto-generated method stub
+	return null;
 }
     
 

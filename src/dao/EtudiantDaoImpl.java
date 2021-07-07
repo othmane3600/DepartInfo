@@ -11,7 +11,7 @@ import metier.SingletonConnection;
 import metierEntite.Etudiant;
 
 public class EtudiantDaoImpl {
-	public List<Etudiant> getAllEtudiant()  {
+	public List<Etudiant> getEtudiantActive()  {
 		Connection conn=SingletonConnection.getConnection();
 		PreparedStatement ps;
 		List<Etudiant>Liste=new ArrayList<>();
@@ -37,7 +37,58 @@ public class EtudiantDaoImpl {
 		}
 		return Liste;
 	}
-
+	public List<Etudiant> getEtudiantNotActive()  {
+		Connection conn=SingletonConnection.getConnection();
+		PreparedStatement ps;
+		List<Etudiant>Liste=new ArrayList<>();
+		
+		try {
+			ps=conn.prepareStatement("SELECT * FROM etudiant Where State=0 ");
+			ResultSet rs=ps.executeQuery();
+			
+			while(rs.next()) {
+				Etudiant Et=new Etudiant();
+				Et.setId(rs.getInt("IdEtud"));
+				Et.setNom(rs.getString("Nom"));
+				Et.setPrenom(rs.getString("Prenom"));
+				Et.setEmail(rs.getString("email"));
+				Et.setMassar(rs.getString("Massar"));
+				Et.setMdp(rs.getString("Mdp"));
+			
+				Liste.add(Et);
+			}
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+		return Liste;
+	}
+	public List<Etudiant> getAllEtudiant()  {
+		Connection conn=SingletonConnection.getConnection();
+		PreparedStatement ps;
+		List<Etudiant>Liste=new ArrayList<>();
+		
+		try {
+			ps=conn.prepareStatement("SELECT * FROM etudiant ");
+			ResultSet rs=ps.executeQuery();
+			
+			while(rs.next()) {
+				Etudiant Et=new Etudiant();
+				Et.setId(rs.getInt("IdEtud"));
+				Et.setNom(rs.getString("Nom"));
+				Et.setPrenom(rs.getString("Prenom"));
+				Et.setEmail(rs.getString("email"));
+				Et.setMassar(rs.getString("Massar"));
+				Et.setMdp(rs.getString("Mdp"));
+			
+				Liste.add(Et);
+			}
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+		return Liste;
+	}
 	public List<Etudiant> getEtudiantParMC(String mc) {
 		
 		Connection con= SingletonConnection.getConnection();

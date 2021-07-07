@@ -12,4 +12,7 @@ public interface ProfesseurDao {
 		public void Stop(int id);
 		public Professeur getProfesseurById(int id);
 		public Professeur geProfesseur(String username, String pass);
+		
+		
+		public void updateProfesseur(int idProfesseur,int idEmploi);
 }

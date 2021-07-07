@@ -2,10 +2,11 @@ package dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import metier.SingletonConnection;
-
+import metierEntite.Professeur;
 import metierEntite.User;
 
 public class UserDaoImpl {
@@ -34,6 +35,43 @@ public User Add(User p) {
 	return p;
 	// TODO Auto-generated method stub
 	
+}
+public int getIDProf(String nom , String prenom) {
+    Connection conn = SingletonConnection.getConnection();
+    PreparedStatement ps ;
+    int idProf =0;
+    try {
+        ps = conn.prepareStatement("select id_professeur from professeur where nom_professeur=? and prenom_professeur=?");
+        ps.setString(1, nom);
+        ps.setString(2, prenom);
+        ResultSet rs = ps.executeQuery();
+        while(rs.next()) {
+            idProf = rs.getInt("id_professeur");
+        }
+        ps.close();
+        conn.close();
+    }catch (Exception e) {
+            // TODO: handle exception
+            e.printStackTrace();
+        }
+    return idProf ;
+}
+public void addUser(User user , Professeur prof) {
+    Connection conn = SingletonConnection.getConnection();
+    int idprf = getIDProf(prof.getNom(),prof.getPrenom());
+    PreparedStatement ps ;
+    try {
+        ps=conn.prepareStatement(" insert into user(password,roles,username,id_prof) values(?,?,?,?)");
+        ps.setString(1, user.getPassword());
+        ps.setString(2, "professeur");
+        ps.setString(3, user.getUsername());
+        ps.setInt(4, idprf);
+        ps.executeUpdate();
+        ps.close();
+        conn.close();
+    }catch(Exception e ) {
+        e.printStackTrace();
+    }
 }
 public void Modify( User p ) {
 	Connection conn=SingletonConnection.getConnection();
