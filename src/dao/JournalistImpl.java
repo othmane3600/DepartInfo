@@ -14,5 +14,5 @@ public interface JournalistImpl {
 	
 	public Journaliste getJournalisteById(int id);
 	
-	public Journaliste modifierJournaliste(Journaliste journaliste);
+	public void modifierJournaliste(String nom , String prenom , String email , String mdp,int id);
 }

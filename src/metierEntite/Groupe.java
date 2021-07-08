@@ -15,6 +15,17 @@ public void setIdGroupe(int idGroupe) {
 public String getNom() {
 	return Nom;
 }
+
+@Override
+public String toString() {
+	return "Groupe [IdGroupe=" + IdGroupe + ", Nom=" + Nom + ", Idsect=" + Idsect + ", IdEmploi=" + IdEmploi
+			+ ", IdSect=" + IdSect + "]";
+}
+public Groupe(int idGroupe, String nom) {
+	super();
+	IdGroupe = idGroupe;
+	Nom = nom;
+}
 public void setNom(String nom) {
 	Nom = nom;
 }

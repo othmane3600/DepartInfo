@@ -127,13 +127,14 @@
 							<li><a class="" href="<c:url value="/GestEtu"/>">Etudiants</a></li>
 							<li><a class="" href="<c:url value="/GestProf"/>">
 									Professeurs</a></li>
-							<li><a class="" href="<c:url value="/GestEqp"/>">Equipe
+							<li><a class="" href="<c:url value="/listeEqr"/>">Equipe
 									de Recherches </a></li>
 
 							<li><a class="" href="<c:url value="/GestForm"/>">Formations</a></li>
 							<li><a class="" href="<c:url value="/GestJourn"/>">Journalistes</a></li>
 							<li><a class="" href="<c:url value="/GestEven"/>">Evenements</a></li>
 							<li><a class="" href="<c:url value="/GestActu"/>">Actualites</a></li>
+							<li><a class="" href="<c:url value="/ChoixListe.jsp"/>">Liste Etudiant</a></li>
 						</ul></li>
 					<li class="sub-menu"><a href="javascript:;" class=""> <i
 							class="icon_desktop"></i> <span>UI Fitures</span> <span

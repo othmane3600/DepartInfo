@@ -141,6 +141,7 @@
               <li><a class="" href="<c:url value="/GestJourn"/>">Journalistes</a></li>
               <li><a class="" href="<c:url value="/GestEven"/>">Evenements</a></li>
               <li><a class="" href="<c:url value="/GestActu"/>">Actualites</a></li>
+              <li><a class="" href="<c:url value="/ChoixListe.jsp"/>">Liste Etudiant</a></li>
             </ul>
           </li>
           <li class="sub-menu">

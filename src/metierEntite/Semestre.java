@@ -7,6 +7,18 @@ public class Semestre {
 	public int getId() {
 		return Id;
 	}
+	
+	public Semestre(int id, String nom) {
+		super();
+		Id = id;
+		Nom = nom;
+	}
+
+	public Semestre(String nom) {
+		super();
+		Nom = nom;
+	}
+
 	public void setId(int id) {
 		Id = id;
 	}

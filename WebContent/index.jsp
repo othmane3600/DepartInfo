@@ -144,16 +144,17 @@
               <li><a class="" href="<c:url value="/GestJourn"/>">Journalistes</a></li>
               <li><a class="" href="<c:url value="/GestEven"/>">Evenements</a></li>
               <li><a class="" href="<c:url value="/GestActu"/>">Actualites</a></li>
+              <li><a class="" href="<c:url value="/ChoixListe.jsp"/>">Liste Etudiant</a></li>
             </ul>
           </li>
           <li class="sub-menu">
             <a href="javascript:;" class="">
                           <i class="icon_desktop"></i>
-                          <span>UI Fitures</span>
+                          <span>EDT</span>
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
             <ul class="sub">
-              <li><a class="" href="general.html">Elements</a></li>
+              <li><a class="" href="addemploi">Ajout</a></li>
               <li><a class="" href="buttons.html">Buttons</a></li>
               <li><a class="" href="grids.html">Grids</a></li>
             </ul>

@@ -134,6 +134,8 @@
 							<li><a class="" href="<c:url value="/GestJourn"/>">Journalistes</a></li>
 							<li><a class="" href="<c:url value="/GestEven"/>">Evenements</a></li>
 							<li><a class="" href="<c:url value="/GestActu"/>">Actualites</a></li>
+							<li><a class="" href="<c:url value="/ChoixListe.jsp"/>">Liste Etudiant</a></li>
+							
 						</ul></li>
 					<li class="sub-menu"><a href="javascript:;" class=""> <i
 							class="icon_desktop"></i> <span>UI Fitures</span> <span
@@ -215,7 +217,7 @@
 										<th><i class="icon_calendar"></i> Prenom</th>
 										<th><i class="icon_mail_alt"></i> Email</th>
 										<th><i class="icon_pin_alt"></i> Massar</th>
-										<th><i class="icon_mobile"></i> MDP</th>
+										
 										<th><i class="icon_cogs"></i> Action</th>
 									</tr>
 									<tr>
@@ -230,9 +232,9 @@
 													<div class="btn-group">
 
 														<a class="btn btn-success"
-															href="ModfEtu?id=<c:out value ='${Et.getId()}'/>"><i
+															href="ModfEtu?id=<c:out value ='${Et.getIdJournaliste()}'/>"><i
 															class="icon_check_alt2"></i></a> <a class="btn btn-danger"
-															href="DelEtu?id=<c:out value='${Et.getId()}'/>"><i
+															href="DelEtu?id=<c:out value='${Et.getIdJournaliste()}'/>"><i
 															class="icon_close_alt2"></i></a>
 													</div>
 												</td>

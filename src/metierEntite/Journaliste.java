@@ -36,9 +36,8 @@ public class Journaliste {
 	public void setMdp(String mdp) {
 		Mdp = mdp;
 	}
-	public Journaliste(int idJournaliste, String nom, String prenom, String email, String mdp) {
+	public Journaliste( String nom, String prenom, String email, String mdp) {
 		super();
-		IdJournaliste = idJournaliste;
 		Nom = nom;
 		Prenom = prenom;
 		Email = email;

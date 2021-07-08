@@ -8,5 +8,5 @@ public interface Emploi_du_TempsDAO {
 	public void Modify(Emploi_du_temps a);
 	public void Delete(Emploi_du_temps a);
 	
-	public Emploi_du_temps getEmploiByName(String name);
+	public int getEmploiByName(String name);
 }

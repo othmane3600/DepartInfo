@@ -20,7 +20,6 @@ private static Connection connection;
 
             ret = DriverManager.getConnection(mysqlConnUrl, mysqlUserName, mysqlPassword);
 
-            System.out.println("HH");
 
         } catch (Exception ex) {
             ex.printStackTrace();

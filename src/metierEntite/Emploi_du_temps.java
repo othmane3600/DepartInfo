@@ -2,7 +2,6 @@ package metierEntite;
 
 import java.io.InputStream;
 
-import com.mysql.jdbc.Blob;
 
 public class Emploi_du_temps {
 	private int IdEmploi;
@@ -10,6 +9,17 @@ public class Emploi_du_temps {
 	private String nom;
 
 	
+	
+	public Emploi_du_temps(int idEmploi, InputStream emploi, String nom) {
+		super();
+		IdEmploi = idEmploi;
+		Emploi = emploi;
+		this.nom = nom;
+	}
+
+	public Emploi_du_temps() {
+		super();
+	}
 
 	public Emploi_du_temps(InputStream emploi, String nom) {
 		super();
@@ -40,6 +50,12 @@ public class Emploi_du_temps {
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
+
+	@Override
+	public String toString() {
+		return "Emploi_du_temps [IdEmploi=" + IdEmploi + ", Emploi=" + Emploi + ", nom=" + nom + "]";
+	}
+	
 
 	
 

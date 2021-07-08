@@ -20,5 +20,9 @@ public class Section {
 		Idsection = idsection;
 		Nom = nom;
 	}
+	public Section(String nom) {
+		super();
+		Nom = nom;
+	}
 	
 }
