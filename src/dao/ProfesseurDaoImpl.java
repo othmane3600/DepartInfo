@@ -235,7 +235,20 @@ public List<Professeur> getProfBack() {
 	@Override
 	public void updateProfesseur(int idProfesseur, int idEmploi) {
 		// TODO Auto-generated method stub
-		
+		Connection conn=SingletonConnection.getConnection();
+		   
+	    try {
+	    	PreparedStatement ps= conn.prepareStatement("UPDATE professeur SET idemploi=? WHERE IdProf=?");
+	    
+	    	ps.setInt(1,idEmploi);
+			ps.setInt(2,idProfesseur);
+			
+			
+			ps.execute();
+			ps.close();
+	    	} catch (SQLException e) {
+	    	e.printStackTrace();
+	    	}
 	}
 
 	

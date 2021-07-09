@@ -7,7 +7,7 @@
 
   
 
-  <title>Stanford University</title>
+  <title></title>
 <meta name="robots" content="max-image-preview:large">
 <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
 <link rel="dns-prefetch" href="https://s.w.org/">
@@ -138,26 +138,15 @@ var sufbpOptions = [""];
   margin: 10px;
   margin-top:auto;
   width: 126px;"/></a>
-      <nav id="gateway" class="menu-gateway-nav-container" aria-label="Gateway navigation"><ul id="menu-gateway-nav" class="menu"><li id="menu-item-9055" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9055"><a href="test">LOG IN</a></li>
-<li id="menu-item-8817" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8817"><a href="https://www.stanford.edu/faculty-staff-gateway/">Faculty &amp; Staff</a></li>
-<li id="menu-item-17" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17"><a href="http://parents.stanford.edu/">Families</a></li>
-<li id="menu-item-7621" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7621"><a href="https://visit.stanford.edu/">Visitors</a></li>
-<li id="menu-item-18" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-18"><a href="http://alumni.stanford.edu/">Alumni</a></li>
-<li id="menu-item-14089" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14089"><a href="https://healthalerts.stanford.edu/covid-19/">COVID Resources</a></li>
+      <nav id="gateway" class="menu-gateway-nav-container" aria-label="Gateway navigation"><ul id="menu-gateway-nav" class="menu"><li id="menu-item-9055" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9055"><a href="test">Espace Admin</a></li>
+<li id="menu-item-8817" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8817"><a href="https://www.stanford.edu/faculty-staff-gateway/">Espace Etudiant</a></li>
+<li id="menu-item-17" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17"><a href="http://parents.stanford.edu/">Espace Professeur</a></li>
+<li id="menu-item-7621" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7621"><a href="https://visit.stanford.edu/">Espace Journaliste</a></li>
 </ul></nav>      <button id="search-toggle" aria-controls="site-search" aria-expanded="false" data-ga-action="Search toggle">Search</button>
       <button id="menu-toggle" aria-controls="primary-menu" aria-expanded="false" data-ga-action="Menu toggle">Menu</button>
     </section>
     <div id="menu-overlay" aria-hidden="true" role="presentation"></div>
-    <nav id="site-navigation" role="navigation" aria-label="Primary site navigation" data-ga-category="Top nav">
-      <div class="menu-primary-nav-container"><ul id="primary-menu" class="menu"><li id="menu-item-2297" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2297"><a href="https://www.stanford.edu/news/">News</a></li>
-<li id="menu-item-2296" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2296"><a href="https://www.stanford.edu/events/">Events</a></li>
-<li id="menu-item-106" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-106"><a href="https://www.stanford.edu/academics/">Academics</a></li>
-<li id="menu-item-108" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-108"><a href="https://www.stanford.edu/research/">Research</a></li>
-<li id="menu-item-1336" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1336"><a href="https://www.stanford.edu/health-care/">Health Care</a></li>
-<li id="menu-item-109" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-109"><a href="https://www.stanford.edu/campus-life/">Campus Life</a></li>
-<li id="menu-item-107" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-107"><a href="https://www.stanford.edu/admission/">Admission</a></li>
-<li id="menu-item-110" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-110"><a href="https://www.stanford.edu/about/">About</a></li>
-</ul></div>    </nav>
+   
         <section id="search-wrapper">
   <div id="search-overlay" aria-hidden="true" role="presentation"></div>
   <div id="site-search" role="search">
@@ -181,13 +170,11 @@ var sufbpOptions = [""];
     </p>
   </div>
 </section>
-    
-<section class="panel-collection" data-modular-content-collection="">
-
+ 
 	
   <section class="panel theme--choco" data-type="splash-image" data-modular-content="" data-js="panel" data-index="0" data-scroll-type="parallax" data-logo-loc-v="middle" data-logo-loc-h="center" data-ga-category="Splash Panel">
 
-    <p id="splash--wordmark" class="su-brand splash__wordmark--middle splash__wordmark--center">Stanford</p>
+    <p id="splash--wordmark" class="su-brand splash__wordmark--middle splash__wordmark--center">UMI</p>
 <p id="splash--scroller"><a href="https://www.stanford.edu/#main-content" data-ga-action="Splash screen scroller">Explore Stanford</a></p>
 
       <picture aria-hidden="true" tabindex="-1">
@@ -213,71 +200,7 @@ var sufbpOptions = [""];
 <section class="panel-collection" data-modular-content-collection="">
 
 	
-  <section class="panel theme--stone" data-type="section" data-modular-content="" data-js="panel" data-index="2">
-
-    <header>
-
-<h2 class="center">Stanford's Response to<br>COVID-19</h2>
-<p>Stanford is implementing a phased recovery of university operations. We are currently in&nbsp;<a href="https://cardinalrecovery.stanford.edu/stages/">Stage 2</a> of the restart process.</p>
-
-</header>
-
-  <section class="panel" data-type="call-to-action">
-
-    
-<a href="https://healthalerts.stanford.edu/covid-19/" data-ga-category="Call to action" data-ga-action="More about Stanford&#39;s response to COVID-19">More about Stanford's response to COVID-19</a>
-
-  </section><!-- panel Health Alerts CTA -->
-
-
-
-  </section><!-- panel Stanford's Response to<br/>COVID-19 -->
-
-
-
-  <section class="panel theme--sandstone" data-type="section" data-modular-content="" data-js="panel" data-index="5">
-
-    <header>
-
-<h2 class="center">Stanford News</h2>
-<p>The latest stories from Stanford</p>
-
-</header>
-
-  <section class="panel" data-type="posts" data-width="full" data-posts-per-row="4" data-featured-post="first-last">
-
-    <div class="grid-container">
-<article class="theme--choco">
-<figure class="landscape">
-  <a href="https://news.stanford.edu/2021/06/13/commencement-2021/" aria-hidden="true" tabindex="-1">
-  <picture data-anchor-v="center" data-anchor-h="center">
-    <!--[if IE 9]><video style="display: none;"><![endif]-->
-    <source srcset="https://www.stanford.edu/wp-content/uploads/2021/06/commencement_stadium_wave.jpg 1500w, https://www.stanford.edu/wp-content/uploads/2021/06/commencement_stadium_wave-767x511.jpg 767w, https://www.stanford.edu/wp-content/uploads/2021/06/commencement_stadium_wave-1023x682.jpg 1023w, https://www.stanford.edu/wp-content/uploads/2021/06/commencement_stadium_wave-768x512.jpg 768w, https://www.stanford.edu/wp-content/uploads/2021/06/commencement_stadium_wave-575x383.jpg 575w, https://www.stanford.edu/wp-content/uploads/2021/06/commencement_stadium_wave-600x400.jpg 600w, https://www.stanford.edu/wp-content/uploads/2021/06/commencement_stadium_wave-500x333.jpg 500w">
-    <!--[if IE 9]></video><![endif]-->
-    <img role="presentation" alt="2021 Stanford graduates" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
-  </picture>
-  </a>
-  
-</figure>
-  <div class="content">
-    <div class="post-meta">
-      <p class="post-category">Campus Life</p>
-    </div>
-    <h3><a href="https://news.stanford.edu/2021/06/13/commencement-2021/">Stanford University Commencement 2021</a></h3>
-  </div>
-</article>
-<article>
-<figure class="landscape">
-  <a href="https://news.stanford.edu/2021/06/21/designing-sustainable-cities/" aria-hidden="true" tabindex="-1">
-  <picture data-anchor-v="center" data-anchor-h="center">
-    <!--[if IE 9]><video style="display: none;"><![endif]-->
-    <source srcset="https://www.stanford.edu/wp-content/uploads/2021/06/SoftwareSustainability1.jpg 1500w, https://www.stanford.edu/wp-content/uploads/2021/06/SoftwareSustainability1-767x511.jpg 767w, https://www.stanford.edu/wp-content/uploads/2021/06/SoftwareSustainability1-1023x682.jpg 1023w, https://www.stanford.edu/wp-content/uploads/2021/06/SoftwareSustainability1-768x512.jpg 768w, https://www.stanford.edu/wp-content/uploads/2021/06/SoftwareSustainability1-575x383.jpg 575w, https://www.stanford.edu/wp-content/uploads/2021/06/SoftwareSustainability1-600x400.jpg 600w, https://www.stanford.edu/wp-content/uploads/2021/06/SoftwareSustainability1-500x333.jpg 500w">
-    <!--[if IE 9]></video><![endif]-->
-    <img role="presentation" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
-  </picture>
-  </a>
-  
-</figure>
+ 
   <div class="content">
     <div class="post-meta">
       <p class="post-category">Science &amp; Technology</p>
@@ -610,99 +533,7 @@ var sufbpOptions = [""];
 </div>
 <hr aria-hidden="true">
 
-  </section><!-- panel Research Facts -->
-
-
-
-  <section class="panel" data-type="posts" data-width="full" data-posts-per-row="4" data-featured-post="none">
-
-    <header>
-
-<h2 class="center">Stanford research for a better world</h2>
-</header>
-<div class="grid-container">
-<article>
-<figure class="landscape">
-  <a href="https://news.stanford.edu/2021/06/17/flextronics-take-another-step-closer-reality/" aria-hidden="true" tabindex="-1">
-  <picture data-anchor-v="center" data-anchor-h="center">
-    <!--[if IE 9]><video style="display: none;"><![endif]-->
-    <source srcset="https://www.stanford.edu/wp-content/uploads/2021/06/flextronics-pop-iStock-1222848902-Converted.jpg 1500w, https://www.stanford.edu/wp-content/uploads/2021/06/flextronics-pop-iStock-1222848902-Converted-767x511.jpg 767w, https://www.stanford.edu/wp-content/uploads/2021/06/flextronics-pop-iStock-1222848902-Converted-1023x681.jpg 1023w, https://www.stanford.edu/wp-content/uploads/2021/06/flextronics-pop-iStock-1222848902-Converted-768x511.jpg 768w, https://www.stanford.edu/wp-content/uploads/2021/06/flextronics-pop-iStock-1222848902-Converted-575x383.jpg 575w, https://www.stanford.edu/wp-content/uploads/2021/06/flextronics-pop-iStock-1222848902-Converted-600x400.jpg 600w, https://www.stanford.edu/wp-content/uploads/2021/06/flextronics-pop-iStock-1222848902-Converted-500x333.jpg 500w">
-    <!--[if IE 9]></video><![endif]-->
-    <img role="presentation" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
-  </picture>
-  </a>
-  
-</figure>
-  <div class="content">
-    <div class="post-meta">
-      <p class="post-category">Science &amp; Technology</p>
-    </div>
-    <h3><a href="https://news.stanford.edu/2021/06/17/flextronics-take-another-step-closer-reality/">Flextronics take another step closer to reality</a></h3>
-  </div>
-</article>
-<article>
-<figure class="landscape">
-  <a href="https://news.stanford.edu/2019/10/28/understanding-wildfire-season/" aria-hidden="true" tabindex="-1">
-  <picture data-anchor-v="center" data-anchor-h="center">
-    <!--[if IE 9]><video style="display: none;"><![endif]-->
-    <source srcset="https://www.stanford.edu/wp-content/uploads/2019/10/wildfire_GettyImages-155308044.jpg 1500w, https://www.stanford.edu/wp-content/uploads/2019/10/wildfire_GettyImages-155308044-767x511.jpg 767w, https://www.stanford.edu/wp-content/uploads/2019/10/wildfire_GettyImages-155308044-768x512.jpg 768w, https://www.stanford.edu/wp-content/uploads/2019/10/wildfire_GettyImages-155308044-1023x682.jpg 1023w, https://www.stanford.edu/wp-content/uploads/2019/10/wildfire_GettyImages-155308044-575x383.jpg 575w, https://www.stanford.edu/wp-content/uploads/2019/10/wildfire_GettyImages-155308044-1499x999.jpg 1499w, https://www.stanford.edu/wp-content/uploads/2019/10/wildfire_GettyImages-155308044-600x400.jpg 600w, https://www.stanford.edu/wp-content/uploads/2019/10/wildfire_GettyImages-155308044-500x333.jpg 500w">
-    <!--[if IE 9]></video><![endif]-->
-    <img role="presentation" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
-  </picture>
-  </a>
-  
-</figure>
-  <div class="content">
-    <div class="post-meta">
-      <p class="post-category">Science &amp; Technology</p>
-    </div>
-    <h3><a href="https://news.stanford.edu/2019/10/28/understanding-wildfire-season/">Understanding wildfire season</a></h3>
-  </div>
-</article>
-<article>
-<figure class="landscape">
-  <a href="https://news.stanford.edu/2019/08/19/what-its-like-to-be-a-chemist/" aria-hidden="true" tabindex="-1">
-  <picture data-anchor-v="center" data-anchor-h="center">
-    <!--[if IE 9]><video style="display: none;"><![endif]-->
-    <source srcset="https://www.stanford.edu/wp-content/uploads/2019/08/chemist_dassama_1400.jpg 5554w, https://www.stanford.edu/wp-content/uploads/2019/08/chemist_dassama_1400-767x511.jpg 767w, https://www.stanford.edu/wp-content/uploads/2019/08/chemist_dassama_1400-768x512.jpg 768w, https://www.stanford.edu/wp-content/uploads/2019/08/chemist_dassama_1400-1023x682.jpg 1023w, https://www.stanford.edu/wp-content/uploads/2019/08/chemist_dassama_1400-575x383.jpg 575w, https://www.stanford.edu/wp-content/uploads/2019/08/chemist_dassama_1400-1499x999.jpg 1499w, https://www.stanford.edu/wp-content/uploads/2019/08/chemist_dassama_1400-600x400.jpg 600w, https://www.stanford.edu/wp-content/uploads/2019/08/chemist_dassama_1400-500x333.jpg 500w">
-    <!--[if IE 9]></video><![endif]-->
-    <img role="presentation" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
-  </picture>
-  </a>
-  
-</figure>
-  <div class="content">
-    <div class="post-meta">
-      <p class="post-category">Science &amp; Technology</p>
-    </div>
-    <h3><a href="https://news.stanford.edu/2019/08/19/what-its-like-to-be-a-chemist/">What it’s like to be a chemist</a></h3>
-  </div>
-</article>
-<article>
-<figure class="landscape">
-  <a href="https://news.stanford.edu/2019/08/15/back-to-school/" aria-hidden="true" tabindex="-1">
-  <picture data-anchor-v="center" data-anchor-h="center">
-    <!--[if IE 9]><video style="display: none;"><![endif]-->
-    <source srcset="https://www.stanford.edu/wp-content/uploads/2019/08/gettybacktoschool.jpg 1500w, https://www.stanford.edu/wp-content/uploads/2019/08/gettybacktoschool-767x509.jpg 767w, https://www.stanford.edu/wp-content/uploads/2019/08/gettybacktoschool-768x510.jpg 768w, https://www.stanford.edu/wp-content/uploads/2019/08/gettybacktoschool-1023x679.jpg 1023w, https://www.stanford.edu/wp-content/uploads/2019/08/gettybacktoschool-575x382.jpg 575w, https://www.stanford.edu/wp-content/uploads/2019/08/gettybacktoschool-1499x995.jpg 1499w, https://www.stanford.edu/wp-content/uploads/2019/08/gettybacktoschool-600x398.jpg 600w, https://www.stanford.edu/wp-content/uploads/2019/08/gettybacktoschool-500x332.jpg 500w">
-    <!--[if IE 9]></video><![endif]-->
-    <img role="presentation" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
-  </picture>
-  </a>
-  
-</figure>
-  <div class="content">
-    <div class="post-meta">
-      <p class="post-category">Teaching &amp; Students</p>
-    </div>
-    <h3><a href="https://news.stanford.edu/2019/08/15/back-to-school/">Back to school: Applying Stanford research to student success</a></h3>
-  </div>
-</article>
-</div>
-
-  </section><!-- panel Stanford research for a better world -->
-
-
-
+ 
   <section class="panel" data-type="call-to-action">
 
     

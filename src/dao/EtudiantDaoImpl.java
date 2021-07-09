@@ -352,9 +352,7 @@ public class EtudiantDaoImpl {
 		List<Etudiant> le= null;
 		for (int i = 0; i < g.size(); i++) {
 			int idg = getIdGroupe(g.get(i).getNom());
-			System.out.println(idg);
 			le = etudiantsDSgroupe(idg);
-			System.out.println(le);
 			e.addAll(le);
 			
 		}
@@ -366,7 +364,7 @@ public class EtudiantDaoImpl {
 		PreparedStatement ps;
 		List<Section> ls = new  ArrayList<Section>();
 		try {
-			ps=conn.prepareStatement("select s.Nom from section s , semestre sm , sectsem ss where s.IdSect=ss.IdSect and sm.Nom=? and s.IdSemestre=ss.IdSemestre;");
+			ps=conn.prepareStatement("select s.Nom from section s , semestre sm , sectsem ss where s.IdSect=ss.IdSect and sm.Nom=? and sm.IdSemestre=ss.IdSemestre;");
 			ps.setString(1, semestre);
 			ResultSet rs =ps.executeQuery();
 			while(rs.next()) {
@@ -378,5 +376,17 @@ public class EtudiantDaoImpl {
 			e.printStackTrace();
 		}
 		return ls;
+	}
+	
+	public HashSet<Etudiant> etudiantDSSem(String semestre){
+		List<Section> ls = listeSecfromSem(semestre);
+		HashSet<Etudiant> hs = new HashSet<Etudiant>();
+		HashSet<Etudiant> t = null;
+		for (int i = 0; i < ls.size(); i++) {
+			List<Groupe> lg = groupeFROMsection(ls.get(i).getNom());
+			t=getEtudiant(lg);
+			hs.addAll(t);
+		}
+		return hs;
 	}
 }

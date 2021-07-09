@@ -26,6 +26,7 @@ import dao.JournalistDaoImpl;
 import dao.LoginDAO;
 import dao.ProfesseurDaoImpl;
 import metier.SingletonConnection;
+import metierEntite.Emploi_du_temps;
 import metierEntite.Equipe_Recherche;
 import metierEntite.Etudiant;
 import metierEntite.Groupe;
@@ -42,7 +43,7 @@ import metierEntite.User;
 		"/ModfEtu", "/modEtud", "/GestProf", "/AddProf", "/SaveProf", "/modProf", "/listeEqr", "/choix-listp",
 		"/filtregroupe", "/ModfProf", "/GestEqp", "/addEqr", "/Slct1", "/Slct2", "/Slct3", "/listerJournaliste",
 		"/GestJourn", "/AddJournaliste", "/AddJournalisteget", "/addemploi", "/AddEmploipost", 
-		"/espaceProf","/filtresection","/filtresemestre"})
+		"/espaceProf","/filtresection","/filtresemestre","/listeEDT"})
 @MultipartConfig(fileSizeThreshold = 1024 * 1024, maxFileSize = 1024 * 1024 * 5, maxRequestSize = 1024 * 1024 * 5 * 5)
 
 public class ServletController extends HttpServlet {
@@ -60,7 +61,7 @@ public class ServletController extends HttpServlet {
 	private ProfesseurDaoImpl profDao = new ProfesseurDaoImpl();
 	private EQPR_DAO eq = new EQPR_DAO();
 	private JournalistDaoImpl journalisteDao = new JournalistDaoImpl();
-
+	private Emploi_du_tempsDaoImpl edt = new Emploi_du_tempsDaoImpl();
 	public void init() {
 		loginDao = new LoginDAO();
 
@@ -74,7 +75,7 @@ public class ServletController extends HttpServlet {
 		}
 
 		if (request.getServletPath().equals("/GestEtu")) {
-			List<Etudiant> listeEtudiant = etudiantDao.getAllEtudiant();
+			List<Etudiant> listeEtudiant = etudiantDao.getEtudiantActive();
 			listeEtudiant.stream().forEach(System.out::println);
 			request.setAttribute("listeEtudiant", listeEtudiant);
 			request.getRequestDispatcher("/formulaire.jsp").forward(request, response);
@@ -183,7 +184,7 @@ public class ServletController extends HttpServlet {
 
 			Professeur pr = new Professeur(nom, prenom, tel, email, pass);
 			profDao.Add(pr);
-			response.sendRedirect("/GestProf");
+			response.sendRedirect("GestProf");
 		}
 		if (request.getServletPath().equals("/ModfEtu")) {
 			int id = Integer.parseInt(request.getParameter("id"));
@@ -259,6 +260,7 @@ public class ServletController extends HttpServlet {
 			}
 			Equipe_Recherche er = new Equipe_Recherche(nom, sujet);
 			eq.addEqp(er, idprof);
+			response.sendRedirect("listeEqr");
 
 		} else if (request.getServletPath().equals("/listeEqr")) {
 			List<Equipe_Recherche> er = eq.getAllEqpr();
@@ -268,7 +270,7 @@ public class ServletController extends HttpServlet {
 		}
 
 		////////////////////////////////////////////////////////////////////////
-		/////// Journaliste////////////////////////
+		//////////////////////////////////// Journaliste////////////////////////
 		////////////////////////////////////////////////////////////////////////
 		else if (request.getServletPath().equals("/listerJournaliste")) {
 			String Nom = request.getParameter("nom");
@@ -309,6 +311,7 @@ public class ServletController extends HttpServlet {
 
 			Part filePart = request.getPart("photo");
 			InputStream emploiFile = null;
+			
 			if (filePart != null) {
 				emploiFile = filePart.getInputStream();
 			}
@@ -318,7 +321,7 @@ public class ServletController extends HttpServlet {
 			int id = et.getEmploiByName(nomEmploi);
 
 			profDao.updateProfesseur(idprof, id);
-			request.getRequestDispatcher("/ajouterEmploi.jsp").forward(request, response);
+			request.getRequestDispatcher("/addfichier.jsp").forward(request, response);
 		} else if (request.getServletPath().equals("/choix-listp")) {
 			String choix = request.getParameter("choix");
 			if (choix.equals("groupe")) {
@@ -390,12 +393,17 @@ public class ServletController extends HttpServlet {
 				e.printStackTrace();
 			}
 			}else if(request.getServletPath().equals("/filtresemestre")) {
-				String section = request.getParameter("semestre");
-				List<Groupe> lg = etudiantDao.groupeFROMsection(section);
-				HashSet<Etudiant> hs = etudiantDao.getEtudiant(lg);
-				System.out.println(hs);
+				String semestre = request.getParameter("semestre");
+				System.out.println(semestre);
+				HashSet<Etudiant> hs = etudiantDao.etudiantDSSem(semestre);
 				request.setAttribute("etudiants", hs);
-				this.getServletContext().getRequestDispatcher("/ChoixSect.jsp").forward(request, response);
+				
+				this.getServletContext().getRequestDispatcher("/ChoixSem.jsp").forward(request, response);
+			}else if(request.getServletPath().equals("/listeEDT")) {
+				List<Emploi_du_temps> e =edt.emploiavecProfesseur();
+				request.setAttribute("edt", e);
+				this.getServletContext().getRequestDispatcher("/ListeEDT.jsp").forward(request, response);
+
 			}
 		}
 	}

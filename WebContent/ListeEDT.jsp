@@ -135,7 +135,7 @@
             <ul class="sub">
               <li><a class="" href="<c:url value="/GestEtu"/>">Etudiants</a></li>
               <li><a class="" href="<c:url value="/GestProf"/>"> Professeurs</a></li>
-              <li><a class="" href="<c:url value="/listeEqr"/>">Equipe de Recherches </a></li>
+              <li><a class="" href="<c:url value="/GestEqp"/>">Equipe de Recherches </a></li>
               
               <li><a class="" href="<c:url value="/GestForm"/>">Formations</a></li>
               <li><a class="" href="<c:url value="/GestJourn"/>">Journalistes</a></li>
@@ -224,33 +224,28 @@
             <section class="panel">
               <header class="panel-heading">
                <table >
-               <th>  Table de prof</th>
+               <th>  Table des EDT</th>
                <th class="col-md-5"></th>
                <th class="col-md-5"></th>
                
-               <th> <a class="btn btn-primary" href="<c:url value="/AddProf"/>"><i class="icon_plus_alt2"></i></a></th>
+               <th> <a class="btn btn-primary" href="<c:url value="/addemploi"/>"><i class="icon_plus_alt2"></i></a></th>
                </table>
               </header>
 
               <table class="table table-striped table-advance table-hover">
                 <tbody>
                   <tr>
-                    <th><i class="icon_profile"></i> Nom</th>
-                    <th><i class="icon_calendar"></i> Prenom</th>
-                    <th><i class="icon_mail_alt"></i> Email</th>
-                    <th><i class="icon_pin_alt"></i> Tel</th>
-                    <th><i class="icon_mobile"></i> MDP</th>
-                    <th><i class="icon_cogs"></i> Action</th>
+                    <th><i class="icon_calendar"></i> Nom Edt </th>
+                    <th><i class="icon_mail_alt"></i> Nom Professeur</th>
+                    
                   </tr>
                   <tr>
                   
-                   <c:forEach items="${listeProfesseurs}" var="pr">
+                   <c:forEach items="${edt}" var="e">
          <tr>
-                    <td><c:out value="${pr.getNom()}"/></td>
-                    <td><c:out value="${pr.getPrenom()}"/></td>
-                    <td><c:out value="${pr.getEmail()}"/></td>
-                    <td><c:out value="0${pr.getTel()}"/></td>
-                    <td><c:out value="${pr.getMdp()}"/></td>
+                    <td><c:out value="${e.getNom()}"/></td>
+                    <td><c:out value="${e.getNomp()}"/></td>
+                   
                     <td>
                       <div class="btn-group">
                         
@@ -307,4 +302,3 @@
 </body>
 
 </html>
-    

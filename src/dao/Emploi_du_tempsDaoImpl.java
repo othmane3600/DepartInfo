@@ -99,7 +99,24 @@ public int getEmploiByName(String name) {
 	return idedt;
 }
 
-
+public List<Emploi_du_temps> emploiavecProfesseur(){
+	Connection conn = SingletonConnection.getConnection();
+	PreparedStatement ps;
+	List<Emploi_du_temps> edt = new ArrayList<Emploi_du_temps>();
+	try {
+		ps=conn.prepareStatement("select edt.Nom , p.Nom from emploi_du_temps edt , professeur p where edt.IdEmploi=p.idemploi \r\n"
+				+ "");
+		ResultSet rs = ps.executeQuery();
+		while(rs.next()) {
+			Emploi_du_temps e = new Emploi_du_temps(rs.getString("edt.Nom"), rs.getString("p.Nom"));
+			edt.add(e);
+		}
+	} catch (Exception e) {
+		// TODO: handle exception
+		e.printStackTrace();
+	}
+	return edt;
+}
 
 }
     

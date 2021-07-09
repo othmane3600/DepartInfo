@@ -25,8 +25,9 @@ public class EQPR_DAO {
             ps2.setInt(2, i);
             for (int j = 0; j < 4; j++) {
                 ps2.setInt(1, id[j]);
+                ps2.executeUpdate();
             }
-            ps2.executeUpdate();
+            
         } catch (Exception e) {
             // TODO: handle exception
             e.printStackTrace();

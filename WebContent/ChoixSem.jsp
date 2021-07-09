@@ -301,7 +301,7 @@ table.table .avatar {
 					<option value="section" >Section</option>
 					<option value="Semestre" selected>Semestre</option>
 				</select>
-				<select class="form-select" aria-label="Disabled select example" name="section" >
+				<select class="form-select" aria-label="Disabled select example" name="semestre" >
 					
 					<c:forEach items="${semestres}" var="s">
 						
@@ -333,7 +333,7 @@ table.table .avatar {
     					<th>Massar</th>
     					<th>Nom</th>
     					<th>Prenom</th>
-    					<th>Section</th>
+    					<th>Semestre</th>
     					<!--  <th>Module</th>
     					<th>Element</th>-->
     				    
@@ -346,7 +346,7 @@ table.table .avatar {
                         	<td ><c:out value="${e.getMassar()}"/></td>
                         	<td ><c:out value="${e.getNom()}"/></td>
 							<td ><c:out value="${e.getPrenom()}"/></td>
-							<td ><c:out value="${section}"/></td>
+							<td ><c:out value="${semestre}"/></td>
 							<!--  <td ><c:out value=""/></td>
 							<td ><c:out value=""/></td>-->
 							
